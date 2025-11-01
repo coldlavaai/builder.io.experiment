@@ -25,7 +25,7 @@ export default function HomePage() {
       includeUnpublished: true // This allows draft content to show in preview
     };
 
-    builder.get("BuilderTEST", options)
+    builder.get("builder-test", options)
       .promise()
       .then((data) => {
         console.log("Builder content fetched:", data);
@@ -46,7 +46,7 @@ export default function HomePage() {
           Loading preview...
         </div>
       )}
-      <BuilderComponent model="BuilderTEST" content={content} />
+      <BuilderComponent model="builder-test" content={content} />
     </PageWrapper>
   );
 }
