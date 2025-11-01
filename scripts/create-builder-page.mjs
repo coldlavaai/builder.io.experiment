@@ -15,13 +15,12 @@ if (!BUILDER_API_KEY) {
 
 // The page structure matching the GreenStar homepage
 const pageContent = {
-  name: 'GreenStar Homepage (Builder.io)',
+  name: 'GreenStar Homepage (Builder.io Updated)',
   data: {
     url: '/builder-home',
     title: 'GreenStar Solar - Builder.io Visual Editor Demo',
     description: 'Fully editable GreenStar homepage built with Builder.io visual editor',
-  },
-  blocks: [
+    blocks: [
       {
         '@type': '@builder.io/sdk:Element',
         component: {
@@ -104,6 +103,7 @@ const pageContent = {
         },
       },
     ],
+  },
   published: 'published',
 };
 
