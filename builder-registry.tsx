@@ -17,6 +17,8 @@ import Footer from "./components/Footer";
 
 // Import Builder.io editable components
 import HeroBuilder from "./components/builder/HeroBuilder";
+import AboutBuilder from "./components/builder/AboutBuilder";
+import ContactBuilder from "./components/builder/ContactBuilder";
 
 // Register components with Builder.io
 // This makes them available in the visual editor
@@ -129,8 +131,55 @@ Builder.registerComponent(Hero, {
   ],
 });
 
+// Register editable About component
+Builder.registerComponent(AboutBuilder, {
+  name: "About Section (Editable)",
+  inputs: [
+    {
+      name: "heading",
+      type: "text",
+      defaultValue: "Why Choose GreenStar Solar?",
+    },
+    {
+      name: "content",
+      type: "longText",
+      defaultValue: "We are a family-run business with over 15 years of experience in renewable energy. Our team of certified engineers and installers are dedicated to providing bespoke solar solutions that match your unique requirements.",
+    },
+    {
+      name: "stat1Value",
+      type: "text",
+      defaultValue: "15+",
+    },
+    {
+      name: "stat1Label",
+      type: "text",
+      defaultValue: "Years Experience",
+    },
+    {
+      name: "stat2Value",
+      type: "text",
+      defaultValue: "250+",
+    },
+    {
+      name: "stat2Label",
+      type: "text",
+      defaultValue: "Happy Customers",
+    },
+    {
+      name: "stat3Value",
+      type: "text",
+      defaultValue: "100%",
+    },
+    {
+      name: "stat3Label",
+      type: "text",
+      defaultValue: "Satisfaction Rate",
+    },
+  ],
+});
+
 Builder.registerComponent(About, {
-  name: "About Section",
+  name: "About Section (Sanity)",
   inputs: [
     {
       name: "data",
@@ -184,8 +233,40 @@ Builder.registerComponent(Testimonials, {
   ],
 });
 
+// Register editable Contact component
+Builder.registerComponent(ContactBuilder, {
+  name: "Contact Section (Editable)",
+  inputs: [
+    {
+      name: "heading",
+      type: "text",
+      defaultValue: "Get In Touch",
+    },
+    {
+      name: "subheading",
+      type: "longText",
+      defaultValue: "Ready to start your solar journey? Contact us today for a free consultation and quote.",
+    },
+    {
+      name: "email",
+      type: "text",
+      defaultValue: "info@greenstarsolar.co.uk",
+    },
+    {
+      name: "phone",
+      type: "text",
+      defaultValue: "+44 1234 567890",
+    },
+    {
+      name: "address",
+      type: "text",
+      defaultValue: "Green Street, Solar City, SC1 2AB",
+    },
+  ],
+});
+
 Builder.registerComponent(Contact, {
-  name: "Contact Section",
+  name: "Contact Section (Sanity)",
   inputs: [
     {
       name: "data",

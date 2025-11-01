@@ -1,13 +1,13 @@
-// Populate Builder.io with editable Hero section
+// Populate Builder.io with ALL editable sections
 import 'dotenv/config';
 
 const PRIVATE_API_KEY = process.env.BUILDER_PRIVATE_KEY || 'bpk-6365ba728c6041c49f2615017b1bffb0';
 const PAGE_ID = 'f3a3dc6856744cd7993f6856f0482a01'; // The existing page
 
 async function populateEditableHero() {
-  console.log('🚀 Populating Builder.io page with editable Hero section...\n');
+  console.log('🚀 Populating Builder.io page with ALL editable sections...\n');
 
-  // Define the page structure with the editable Hero component
+  // Define the page structure with ALL editable components
   const pageData = {
     data: {
       title: 'GreenStar Solar - Editable Homepage',
@@ -34,6 +34,55 @@ async function populateEditableHero() {
               stat1Label: 'Years Experience',
               stat2Value: '250+',
               stat2Label: 'Happy Customers',
+            }
+          },
+          responsiveStyles: {
+            large: {
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'stretch',
+              width: '100%',
+            }
+          }
+        },
+        {
+          '@type': '@builder.io/sdk:Element',
+          '@version': 2,
+          id: 'editable-about-1',
+          component: {
+            name: 'About Section (Editable)',
+            options: {
+              heading: 'Why Choose GreenStar Solar?',
+              content: 'We are a family-run business with over 15 years of experience in renewable energy. Our team of certified engineers and installers are dedicated to providing bespoke solar solutions that match your unique requirements. From initial consultation to installation and aftercare, we guide you through every step of your solar journey.',
+              stat1Value: '15+',
+              stat1Label: 'Years Experience',
+              stat2Value: '250+',
+              stat2Label: 'Happy Customers',
+              stat3Value: '100%',
+              stat3Label: 'Satisfaction Rate',
+            }
+          },
+          responsiveStyles: {
+            large: {
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'stretch',
+              width: '100%',
+            }
+          }
+        },
+        {
+          '@type': '@builder.io/sdk:Element',
+          '@version': 2,
+          id: 'editable-contact-1',
+          component: {
+            name: 'Contact Section (Editable)',
+            options: {
+              heading: 'Get In Touch',
+              subheading: 'Ready to start your solar journey? Contact us today for a free consultation and quote.',
+              email: 'info@greenstarsolar.co.uk',
+              phone: '+44 1234 567890',
+              address: 'Green Street, Solar City, SC1 2AB',
             }
           },
           responsiveStyles: {
