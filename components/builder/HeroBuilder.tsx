@@ -13,7 +13,7 @@ interface HeroBuilderProps {
   ctaLink?: string;
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
-  heroImage?: string;
+  heroImage?: string | { url?: string };
   stat1Value?: string;
   stat1Label?: string;
   stat2Value?: string;
@@ -35,6 +35,11 @@ const HeroBuilder = ({
   stat2Value = '250+',
   stat2Label = 'Happy Customers',
 }: HeroBuilderProps) => {
+  // Handle Builder.io image format (can be string or object)
+  const imageUrl = typeof heroImage === 'string'
+    ? heroImage
+    : heroImage?.url || '/images/hero-house.webp';
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-16 md:pt-24">
       {/* Very subtle text shadow overlay for readability */}
@@ -148,7 +153,7 @@ const HeroBuilder = ({
                 }}
               >
                 <Image
-                  src={heroImage}
+                  src={imageUrl}
                   alt="Solar Installation"
                   fill
                   priority

@@ -89,7 +89,7 @@ Builder.registerComponent(HeroBuilder, {
       type: "file",
       allowedFileTypes: ["jpeg", "jpg", "png", "webp"],
       defaultValue: "/images/hero-house.webp",
-      helperText: "Hero image on the right side",
+      helperText: "Hero image on the right side. Upload JPG, PNG, or WebP files. Recommended size: 800x800px or larger for best quality.",
     },
     {
       name: "stat1Value",
