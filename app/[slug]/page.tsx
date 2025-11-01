@@ -68,7 +68,7 @@ async function getLayoutData(isDraftMode: boolean) {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const isDraftMode = draftMode().isEnabled;
+  const { isEnabled: isDraftMode } = await draftMode();
   const page = await getPage(params.slug, isDraftMode);
 
   if (!page) {
@@ -114,7 +114,7 @@ export async function generateStaticParams() {
 
 // Main page component
 export default async function DynamicPage({ params }: PageProps) {
-  const isDraftMode = draftMode().isEnabled;
+  const { isEnabled: isDraftMode } = await draftMode();
   const page = await getPage(params.slug, isDraftMode);
 
   if (!page) {

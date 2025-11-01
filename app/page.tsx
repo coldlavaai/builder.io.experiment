@@ -15,7 +15,7 @@ import { getClient } from '@/lib/sanity';
 export const revalidate = 60;
 
 export default async function Home() {
-  const isDraftMode = draftMode().isEnabled
+  const { isEnabled: isDraftMode } = await draftMode()
   const client = getClient(isDraftMode)
 
   // Fetch all section data

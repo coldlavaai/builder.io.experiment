@@ -44,15 +44,14 @@ export const metadata: Metadata = {
     description: "Leading UK solar energy company. Expert installation of solar panels and battery storage for homes and businesses. Get your free survey today.",
     images: ["/og-image.png"],
   },
-  themeColor: "#000000",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isDraftMode = draftMode().isEnabled
+  const { isEnabled: isDraftMode } = await draftMode()
 
   return (
     <html lang="en">

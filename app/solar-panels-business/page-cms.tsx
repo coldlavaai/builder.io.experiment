@@ -48,7 +48,7 @@ const iconMap: Record<string, any> = {
 
 // Fetch system page data from CMS
 async function getSystemPageData(slug: string) {
-  const isDraftMode = draftMode().isEnabled
+  const { isEnabled: isDraftMode } = await draftMode()
   const client = getClient(isDraftMode)
 
   const data = await client.fetch(
@@ -99,7 +99,7 @@ async function getSystemPageData(slug: string) {
 
 // Fetch navigation and footer data
 async function getLayoutData() {
-  const isDraftMode = draftMode().isEnabled
+  const { isEnabled: isDraftMode } = await draftMode()
   const client = getClient(isDraftMode)
 
   const [nav, footer] = await Promise.all([
