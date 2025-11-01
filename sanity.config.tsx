@@ -20,9 +20,9 @@ const singletonItem = (S: any, typeName: string, title?: string) =>
 
 export default defineConfig({
   name: 'default',
-  title: 'Green Star Solar',
+  title: 'Builder.io Experiment',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'YOUR_PROJECT_ID',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'g0r3sxgj',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
 
   plugins: [
