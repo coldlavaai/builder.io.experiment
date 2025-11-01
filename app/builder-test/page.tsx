@@ -71,7 +71,10 @@ export default function BuilderTestPage() {
             </ol>
             <div className="mt-6 p-4 bg-primary/20 rounded border border-primary/30">
               <p className="text-sm">
-                <strong>Your registered components:</strong> Hero Section, Gallery Section, Contact Form, Footer
+                <strong>Your registered components:</strong> Navigation, Hero Section, About Section, Systems Section, Process Section, Gallery Section, Testimonials Section, Contact Section, Footer
+              </p>
+              <p className="text-xs mt-2 text-gray-400">
+                All components will fetch real data from your Sanity CMS
               </p>
             </div>
           </div>
