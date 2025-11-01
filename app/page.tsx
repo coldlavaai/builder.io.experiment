@@ -19,7 +19,7 @@ export default function HomePage() {
     console.log("Fetching Builder content for URL:", url);
     console.log("Is previewing:", isPreviewing);
 
-    builder.get("buildertest", { url })
+    builder.get("BuilderTEST", { url })
       .promise()
       .then((data) => {
         console.log("Builder content fetched:", data);
@@ -40,7 +40,7 @@ export default function HomePage() {
           Loading preview...
         </div>
       )}
-      <BuilderComponent model="buildertest" content={content} />
+      <BuilderComponent model="BuilderTEST" content={content} />
     </PageWrapper>
   );
 }
