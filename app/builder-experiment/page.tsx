@@ -30,8 +30,8 @@ export default function BuilderHomePage() {
   // Show loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-white text-xl">Loading GreenStar homepage...</div>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-foreground text-xl">Loading GreenStar homepage...</div>
       </div>
     );
   }
@@ -39,7 +39,7 @@ export default function BuilderHomePage() {
   // Show the content from Builder.io
   if (content || isPreviewingInBuilder) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-background">
         <BuilderComponent model="page" content={content} />
       </div>
     );
@@ -47,10 +47,10 @@ export default function BuilderHomePage() {
 
   // Fallback if no content
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-12 flex items-center justify-center">
+    <div className="min-h-screen bg-background text-foreground p-12 flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Builder.io Page Not Found</h1>
-        <p className="text-gray-400">No content found for this URL</p>
+        <p className="text-muted-foreground">No content found for this URL</p>
       </div>
     </div>
   );
