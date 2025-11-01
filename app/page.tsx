@@ -19,14 +19,23 @@ export default function HomePage() {
     // Fetch the Builder.io content for homepage
     builder
       .get("buildertest", {
-        url: "/",
+        url: window.location.pathname,
       })
       .promise()
       .then((data) => {
         setContent(data);
         setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching Builder content:", error);
+        setLoading(false);
       });
   }, []);
+
+  // Always show Builder content when previewing
+  if (isPreviewingInBuilder) {
+    return <BuilderComponent model="buildertest" content={content} />;
+  }
 
   // Show content while loading
   if (loading) {
@@ -38,7 +47,7 @@ export default function HomePage() {
   }
 
   // Show the content from Builder.io if it exists
-  if (content || isPreviewingInBuilder) {
+  if (content) {
     return (
       <PageWrapper>
         <BuilderComponent model="buildertest" content={content} />
