@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 
 // Import Builder.io editable components
 import HeroBuilder from "./components/builder/HeroBuilder";
+import HeroBuilderSimple from "./components/builder/HeroBuilderSimple";
 import AboutBuilder from "./components/builder/AboutBuilder";
 import ContactBuilder from "./components/builder/ContactBuilder";
 import SystemsBuilder from "./components/builder/SystemsBuilder";
@@ -41,8 +42,8 @@ Builder.registerComponent(Navigation, {
   ],
 });
 
-// Register the Builder.io-editable Hero component
-Builder.registerComponent(HeroBuilder, {
+// Register the Builder.io-editable Hero component (simplified version)
+Builder.registerComponent(HeroBuilderSimple, {
   name: "Hero Section (Editable)",
   inputs: [
     {
