@@ -1,10 +1,14 @@
 "use client";
 import { BuilderComponent, useIsPreviewing } from "@builder.io/react";
 import { builder } from "@builder.io/sdk";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
+import DayNightBackground from "@/components/DayNightBackground";
 
 // Import the registry to register components
 import "../../builder-registry";
+
+// Create a simple loading context for the background
+export const LoadingContext = createContext({ isLoaded: true, assemblyComplete: true });
 
 // Initialize Builder
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
@@ -39,9 +43,14 @@ export default function BuilderHomePage() {
   // Show the content from Builder.io
   if (content || isPreviewingInBuilder) {
     return (
-      <div className="min-h-screen bg-background">
-        <BuilderComponent model="page" content={content} />
-      </div>
+      <LoadingContext.Provider value={{ isLoaded: true, assemblyComplete: true }}>
+        <div className="min-h-screen relative">
+          <DayNightBackground />
+          <div className="relative z-10">
+            <BuilderComponent model="page" content={content} />
+          </div>
+        </div>
+      </LoadingContext.Provider>
     );
   }
 
