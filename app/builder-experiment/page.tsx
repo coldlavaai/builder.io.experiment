@@ -7,8 +7,8 @@ import DayNightBackground from "@/components/DayNightBackground";
 // Import the registry to register components
 import "../../builder-registry";
 
-// Create a simple loading context for the background
-export const LoadingContext = createContext({ isLoaded: true, assemblyComplete: true });
+// Create a simple loading context for the background (local, not exported)
+const LoadingContext = createContext({ isLoaded: true, assemblyComplete: true });
 
 // Initialize Builder
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
