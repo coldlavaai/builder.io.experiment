@@ -15,6 +15,9 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+// Import Builder.io editable components
+import HeroBuilder from "./components/builder/HeroBuilder";
+
 // Register components with Builder.io
 // This makes them available in the visual editor
 
@@ -29,8 +32,94 @@ Builder.registerComponent(Navigation, {
   ],
 });
 
+// Register the Builder.io-editable Hero component
+Builder.registerComponent(HeroBuilder, {
+  name: "Hero Section (Editable)",
+  inputs: [
+    {
+      name: "badge",
+      type: "text",
+      defaultValue: "Premium Solar Solutions",
+      helperText: "Small badge text above the heading",
+    },
+    {
+      name: "heading",
+      type: "text",
+      defaultValue: "Smart Energy Solutions",
+      helperText: "Main heading text",
+    },
+    {
+      name: "highlightedText",
+      type: "text",
+      defaultValue: "Designed Around You",
+      helperText: "Highlighted text that appears below the heading",
+    },
+    {
+      name: "subheading",
+      type: "longText",
+      defaultValue: "Bespoke solar energy systems designed to perfectly match your unique requirements. Save money, reduce your carbon footprint, and achieve true energy independence.",
+      helperText: "Subheading/description paragraph",
+    },
+    {
+      name: "ctaText",
+      type: "text",
+      defaultValue: "Get Free Survey",
+      helperText: "Primary button text",
+    },
+    {
+      name: "ctaLink",
+      type: "text",
+      defaultValue: "#contact",
+      helperText: "Primary button link",
+    },
+    {
+      name: "secondaryCtaText",
+      type: "text",
+      defaultValue: "Explore Systems",
+      helperText: "Secondary button text",
+    },
+    {
+      name: "secondaryCtaLink",
+      type: "text",
+      defaultValue: "#systems",
+      helperText: "Secondary button link",
+    },
+    {
+      name: "heroImage",
+      type: "file",
+      allowedFileTypes: ["jpeg", "jpg", "png", "webp"],
+      defaultValue: "/images/hero-house.webp",
+      helperText: "Hero image on the right side",
+    },
+    {
+      name: "stat1Value",
+      type: "text",
+      defaultValue: "15+",
+      helperText: "First statistic value (e.g., 15+)",
+    },
+    {
+      name: "stat1Label",
+      type: "text",
+      defaultValue: "Years Experience",
+      helperText: "First statistic label",
+    },
+    {
+      name: "stat2Value",
+      type: "text",
+      defaultValue: "250+",
+      helperText: "Second statistic value (e.g., 250+)",
+    },
+    {
+      name: "stat2Label",
+      type: "text",
+      defaultValue: "Happy Customers",
+      helperText: "Second statistic label",
+    },
+  ],
+});
+
 Builder.registerComponent(Hero, {
-  name: "Hero Section",
+  name: "Hero Section (Sanity)",
   inputs: [
     {
       name: "data",
