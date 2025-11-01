@@ -2,7 +2,7 @@
 import 'dotenv/config';
 
 const PRIVATE_API_KEY = process.env.BUILDER_PRIVATE_KEY || 'bpk-6365ba728c6041c49f2615017b1bffb0';
-const PAGE_ID = 'f3a3dc6856744cd7993f6856f0482a01'; // The existing page
+const PAGE_ID = '5f26eecd59074eafa780d72323721ed8'; // User's visual editor page
 
 async function populateEditableHero() {
   console.log('🚀 Populating Builder.io page with ALL editable sections...\n');
