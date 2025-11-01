@@ -25,6 +25,7 @@ import GalleryBuilder from "./components/builder/GalleryBuilder";
 import TestimonialsBuilder from "./components/builder/TestimonialsBuilder";
 import NavigationBuilder from "./components/builder/NavigationBuilder";
 import FooterBuilder from "./components/builder/FooterBuilder";
+import SimpleTestComponent from "./components/builder/SimpleTestComponent";
 
 // Register components with Builder.io
 // This makes them available in the visual editor
@@ -426,6 +427,14 @@ Builder.registerComponent(FooterBuilder, {
     { name: "facebookUrl", type: "text", defaultValue: "https://www.facebook.com/profile.php?id=61572185340265" },
     { name: "instagramUrl", type: "text", defaultValue: "https://www.instagram.com/greenstar_solar/" },
     { name: "copyright", type: "text", defaultValue: `© ${new Date().getFullYear()} Greenstar Solar · Company No. 16038912 · All rights reserved.` },
+  ],
+});
+
+// Register simple test component
+Builder.registerComponent(SimpleTestComponent, {
+  name: "TEST - Simple Component",
+  inputs: [
+    { name: "text", type: "text", defaultValue: "This is a test! If you can see this, Builder.io is working!" }
   ],
 });
 
