@@ -19,7 +19,13 @@ export default function HomePage() {
     console.log("Fetching Builder content for URL:", url);
     console.log("Is previewing:", isPreviewing);
 
-    builder.get("BuilderTEST", { url })
+    // Include draft content when previewing
+    const options: any = {
+      url,
+      includeUnpublished: true // This allows draft content to show in preview
+    };
+
+    builder.get("BuilderTEST", options)
       .promise()
       .then((data) => {
         console.log("Builder content fetched:", data);
