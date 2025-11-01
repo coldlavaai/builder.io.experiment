@@ -10,6 +10,8 @@
     "sync:dbr": "npx tsx scripts/sync-dbr-leads.ts"
   },
   "dependencies": {
+    "@builder.io/react": "^8.2.9",
+    "@builder.io/sdk-react-nextjs": "^0.22.2",
     "@portabletext/react": "^4.0.3",
     "@sanity/client": "^6.29.1",
     "@sanity/color-input": "^4.0.6",
