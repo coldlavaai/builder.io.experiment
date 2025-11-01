@@ -4,12 +4,11 @@
  * to page ID: 5f26eecd59074eafa780d72323721ed8
  */
 
-const BUILDER_API_KEY = process.env.NEXT_PUBLIC_BUILDER_API_KEY;
-const PAGE_ID = '5f26eecd59074eafa780d72323721ed8';
-const BUILDER_SPACE_ID = process.env.BUILDER_SPACE_ID || 'YOUR_SPACE_ID';
+const BUILDER_PRIVATE_KEY = process.env.BUILDER_PRIVATE_KEY || 'bpk-6365ba728c6041c49f2615017b1bffb0';
+const PAGE_ID = 'f3a3dc6856744cd7993f6856f0482a01';
 
-if (!BUILDER_API_KEY) {
-  console.error('Error: NEXT_PUBLIC_BUILDER_API_KEY environment variable is not set');
+if (!BUILDER_PRIVATE_KEY) {
+  console.error('Error: BUILDER_PRIVATE_KEY environment variable is not set');
   process.exit(1);
 }
 
@@ -239,11 +238,11 @@ async function populateAllSections() {
     console.log(`Updating page ${PAGE_ID} with all 9 sections...`);
 
     const response = await fetch(
-      `https://cdn.builder.io/api/v1/write/page/${PAGE_ID}`,
+      `https://builder.io/api/v1/write/page/${PAGE_ID}`,
       {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
-          'Authorization': `Bearer ${BUILDER_API_KEY}`,
+          'Authorization': `Bearer ${BUILDER_PRIVATE_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(pageData),
